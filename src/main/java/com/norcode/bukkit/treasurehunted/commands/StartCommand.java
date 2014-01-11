@@ -21,5 +21,7 @@ public class StartCommand extends BaseCommand {
         newPlugin.updateCompass((Player) commandSender);
         Player p = (Player) commandSender;
         p.sendMessage("You have started the treasure hunt.  Use a compass to find it!");
+        ConfigurationSection cfg = plugin.getPlayerData(p);
+        cfg.set("treasure-hunting", true);
     }
 }

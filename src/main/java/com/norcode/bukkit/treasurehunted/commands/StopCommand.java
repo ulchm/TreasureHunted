@@ -19,7 +19,11 @@ public class StopCommand extends BaseCommand {
     @Override
     protected void onExecute(CommandSender commandSender, String label, LinkedList<String> args) throws CommandError {
         Player p = (Player) commandSender;
-        p.sendMessage("Treasure hunt ended.  Compass has been cleared.");
-        p.setCompassTarget(null);
+        p.sendMessage("Treasure hunt ended.  Compass direction now points back to your bed.");
+        if (p.getBedSpawnLocation() == null) {
+            p.setCompassTarget(p.getBedSpawnLocation());
+        } else {
+            p.setCompassTarget(plugin.getServer().getWorld(p.getWorld().getName()).getSpawnLocation());
+        }
     }
 }

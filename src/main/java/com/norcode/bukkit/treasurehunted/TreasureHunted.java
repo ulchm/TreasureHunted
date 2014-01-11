@@ -7,8 +7,11 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Biome;
 import org.bukkit.block.Chest;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
@@ -23,6 +26,7 @@ public class TreasureHunted extends MetalCorePlugin implements Listener {
     public void onEnable() {
         super.onEnable();
         treasureConfig = new ConfigAccessor(this, "treasure.yml");
+
         new TreasureCommand(this);
         spawnNewChest();
     }
@@ -78,5 +82,14 @@ public class TreasureHunted extends MetalCorePlugin implements Listener {
 
     public void updateCompass(Player p) {
         p.setCompassTarget(getTreasureLocation());
+    }
+
+    @EventHandler(ignoreCancelled = true)
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        ConfigurationSection cfg = this.getPlayerData(player);
+        if (cfg.getBoolean("treasure-hunting")) {
+            player.setCompassTarget(getTreasureLocation());
+        }
     }
 }
