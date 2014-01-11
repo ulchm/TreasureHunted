@@ -23,6 +23,7 @@ public class TreasureHunted extends MetalCorePlugin implements Listener {
     public void onEnable() {
         super.onEnable();
         treasureConfig = new ConfigAccessor(this, "treasure.yml");
+        new TreasureCommand(this);
         spawnNewChest();
     }
 
