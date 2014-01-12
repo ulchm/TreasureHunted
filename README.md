@@ -1,4 +1,4 @@
 TreasureHunted
 ==============
 
-Treasure Hunted is a pvp enabled treasure hunt plugin.
+Treasure Hunted is a treasure hunting plugin for minecraft

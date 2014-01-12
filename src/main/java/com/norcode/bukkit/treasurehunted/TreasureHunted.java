@@ -7,13 +7,8 @@ import com.norcode.bukkit.treasurehunted.commands.TreasureCommand;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.InventoryOpenEvent;
-import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
@@ -30,7 +25,6 @@ public class TreasureHunted extends MetalCorePlugin implements Listener {
         treasureConfig = new ConfigAccessor(this, "treasure.yml");
         getServer().getPluginManager().registerEvents(new TreasureListener(this), this);
         new TreasureCommand(this);
-
         if (getTreasureLocation() != null) {
             debug("Treasure location loaded.");
         } else {

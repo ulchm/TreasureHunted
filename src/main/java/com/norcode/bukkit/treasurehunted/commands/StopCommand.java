@@ -3,9 +3,7 @@ package com.norcode.bukkit.treasurehunted.commands;
 import com.norcode.bukkit.metalcore.command.BaseCommand;
 import com.norcode.bukkit.metalcore.command.CommandError;
 import com.norcode.bukkit.treasurehunted.TreasureHunted;
-import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 
 import java.util.LinkedList;
@@ -20,6 +18,5 @@ public class StopCommand extends BaseCommand {
     protected void onExecute(CommandSender commandSender, String label, LinkedList<String> args) throws CommandError {
         Player p = (Player) commandSender;
         p.sendMessage("Treasure hunt ended.");
-        plugin.getPlayerData(p).set("treasure-hunting", false);
     }
 }

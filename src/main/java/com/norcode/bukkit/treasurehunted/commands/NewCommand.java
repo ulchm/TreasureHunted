@@ -3,10 +3,7 @@ package com.norcode.bukkit.treasurehunted.commands;
 import com.norcode.bukkit.metalcore.command.BaseCommand;
 import com.norcode.bukkit.metalcore.command.CommandError;
 import com.norcode.bukkit.treasurehunted.TreasureHunted;
-import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.entity.Player;
 
 import java.util.LinkedList;
 

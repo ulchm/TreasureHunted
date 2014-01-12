@@ -2,3 +2,13 @@ debug-mode: true
 enabled-worlds: ["world"]
 max-distance: 200
 min-player-distance: 50
+permissions:
+  treasurehunted.command.start:
+    default: true
+    description: join the treasure hunt.
+  treasurehunted.command.stop:
+    default: true
+    description: leave the treasure hunt.
+  treasurehunted.command.new:
+    default: op
+    description: starts a new treasure hunt.
