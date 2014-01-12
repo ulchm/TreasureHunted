@@ -13,11 +13,12 @@ public class TreasureCommand extends RootCommand {
         super(plugin, "treasure", new String[] {}, "treasure.command", null);
         registerSubcommand(new StartCommand(plugin));
         registerSubcommand(new StopCommand(plugin));
+        registerSubcommand(new NewCommand(plugin));
     }
 
     @Override
     protected void onExecute(CommandSender commandSender, String label, LinkedList<String> args) throws CommandError {
         Player p = (Player) commandSender;
-        p.sendMessage("Treasure Command");
+        p.sendMessage("Type /treasure start to join in the treasure hunt!");
     }
 }

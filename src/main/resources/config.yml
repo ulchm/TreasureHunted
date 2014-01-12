@@ -1,2 +1,4 @@
+debug-mode: true
 enabled-worlds: ["world"]
 max-distance: 200
+min-player-distance: 50
